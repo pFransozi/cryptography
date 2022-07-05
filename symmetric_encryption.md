@@ -35,3 +35,17 @@ A common error made by those trying to protect information **is to assume that t
 To solve the first issue, it is used a technique called **initialization vector or IV**. An IV is typically **a random string that is used as a third input—in addition to the key and plaintext—into the encryption algorithm**. Exactly how it is used depends on the mode, but the idea is to prevent a given plaintext from encrypting to a repeatable ciphertext. Unlike the key, the IV is public. That is, one assumes that an attacker knows, or can obtain, the value of the IV. The presence of an IV doesn’t help to keep things secret so much as it helps to keep them from being repeated, avoiding exposure of common patterns.
 
 As for the second problem, that of being able to eliminate patterns between blocks, we will solve it by introducing new ways to encrypt the message as a whole, rather than treating each block as an individual, independent mini-message like ECB mode does.
+
+To improve ECB, the method should have the avalanche property, similar to hash method property, which means when a bit from the origin data, more than half in the result data must change. AES does it, but ECB mode no.
+
+**Cipher block chaining (CBC) mode** is a method that ciphertext of one block affect all subsequent blocks. When encrypting, one can XOR the encrypted output of a block with the unencrypted input of the next block.
+
+XOR, just to remember, has the folowing true table:
+
+0 xor 0 = 0
+0 xor 1 = 1
+1 xor 0 = 1
+1 xor 1 = 0
+
+Then, CBC xor the output of one block of ciphertext with the next plaintext block. Therefore, changes to any input block affect the output block for all subsequent blocks.
+

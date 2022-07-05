@@ -1,8 +1,8 @@
-# Introduction
+In this repository, I gather my studies on cryptography, theory and practice.
 
-In cryptography, encryption is a cornerstone of data confidentiality and the effectiveness of cryptography is typically dependent on context. Cryptography is the primary tool for protecting information and it can be used to provide:
+I agree with the statement that cryptography is the primary tool for protecting information and, in cryptography, encryption is a cornerstone of data confidentiality, authentication and integrity. But typically the effectiveness of cryptography depends on context, which means in each context the cryptography method or configuration must be adapted for guarantee one or more of the CIA principle.
 
-    1. confidentiality: only authorized parties can read the protected information. 
-    2. authentication: you know that you are talking to the right entity/person and that they have not delegated their identity.
-    3. integrity: a message hasn't been changed between the sender and receiver.
 
+further read:
+
+https://cryptography.io/en/latest/
